@@ -1,0 +1,35 @@
+﻿{% if (componentID > 0) { %}
+<div id="plan-view-rack-name">
+    <span>{%= name %}</span>
+</div>
+<ul>
+    <li class="controls-title">Alerts</li>
+    <li>Critical: {%= criticalAlerts >= 0 ? criticalAlerts : "N/A" %}</li>
+    <li>Warning: {%= warningAlerts >= 0 ? warningAlerts : "N/A" %}</li>
+</ul>
+<ul>
+    <li class="controls-title">Power</li>
+    <li>{%= "Now: " + roundTo(powerCurrent) %}</li>
+    <li>{%= "Max: " + powerMax %}</li>
+</ul>
+<ul>
+    <li class="controls-title">Cooling</li>
+    <li>{%= "Now: " + roundTo(heatCurrent) %}</li>
+    <li>{%= "Max: " + coolingMax %}</li>
+</ul>
+<ul>
+    <li class="controls-title">Weight</li>
+    <li>{%= "Now: " + roundTo(weightCurrent) %}</li>
+    <li>{%= "Max: " + weightMax %}</li>
+</ul>
+<ul>
+    <li class="controls-title">Rack Units</li>
+    <li>{%= "Now In Use: " + usedUnitsCurrent %}</li>
+    <li>{%= "Largest Slot: " + largestUnitSize %}</li>
+</ul>
+{% } else { %}
+<ul>
+    <li class="controls-title">Hover Over a Rack</li>
+    <li>To see its alerts and readings</li>
+</ul>
+{% } %}

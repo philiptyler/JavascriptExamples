@@ -1,0 +1,10 @@
+﻿<div class="toDoItemWrapper">
+    <i class="fa fa-square-o disabled"></i>
+    <span class="toDoTitle">{%= title %}</span>
+    <span class="removeToDo">X</span>
+</div>
+<div class="hidden toDoToolTip">
+    <div>{%= dueDate === null ? "" : "<strong>Due:</strong> " + $.datepicker.formatDate("d MM yy", dueDate) %}</div>
+    <div>{%= taskSequence === "" ? "" : '<strong>Task:</strong> <a href="../Workflow/Index?taskID=' + taskID + '">' + taskSequence + '</a>' %}</div>
+    <div class="todo-description">{%= description === "" ? "" : "<strong>Todo:</strong> " + description %}</div>
+</div>

@@ -1,0 +1,24 @@
+<transform>
+<shape id="grid">
+{% if (!loadedWithFlash) { %}
+    <appearance >
+        <material class="rack-grid-material" diffusecolor="{%= color %}" transparency="{%= gridTransparency%}" ambientintensity="0.2">
+        </material>
+    </appearance>
+    <indexedLineSet coordindex="{%= coordinateConnections%}">
+        <coordinate point="{%= coordinates %}">
+        </coordinate>
+    </indexedLineSet>
+{% } else { %}
+    <appearance>
+        <textureProperties borderColor='0 0 0 1' borderWidth='1' ></TextureProperties>
+        {% /* Not sure where to place the picture. Left it in the template folder for now */ %}
+        <imagetexture url='../Content/Dashboard/Images/tile256.jpg' ></imagetexture>
+        <textureTransform scale='4, 4'></textureTransform>
+    </appearance>
+    <indexedFaceSet DEF="node" coordIndex="3 2 1 0 -1">
+        <coordinate point="{%= topLeftCorner + ", " + topRightCorner + ", " + bottomRightCorner + ", " + bottomLeftCorner %}"/></coordinate>
+    </indexedFaceSet>
+</shape>
+</transform>
+{% } %}

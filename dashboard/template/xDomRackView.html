@@ -1,0 +1,23 @@
+<shape class='rack' >
+    <appearance>
+        <material class='rack-material' ambientintensity='0.2' diffusecolor='{%= rackColor %}' shininess='0.2'>
+        </material>
+    </appearance>
+    <box def='box' class='rack-box' size='{%= floorPlanWidth + " " + (floorPlanHeight - 0.1) + " " + floorPlanDepth %}'>
+    </box>
+</shape>
+
+{% if (renderName) { %}
+<transform translation="0 {%= -floorPlanHeight * 0.6 %} {%= floorPlanDepth * .51 %}">
+    <shape>
+        <appearance>
+            <material class="text-material" ambientintensity='0.0'
+             diffusecolor='#000000' shininess='0.0' transparency='1.0'>
+            </material>
+        </appearance>
+        <text string="{%= name %}">
+            <fontstyle family="'Helvetica'" size="{%= floorPlanHeight - 0.1 %}" style="Bold"></fontstyle>
+        </text>
+    </shape>
+</transform>
+{% } %}

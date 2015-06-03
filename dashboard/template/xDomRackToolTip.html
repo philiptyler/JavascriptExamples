@@ -1,0 +1,24 @@
+<ul>
+    <li class="controls-title">Name</li>
+    <li>{%= name %}</li>
+    <li class="controls-title">Alerts</li>
+    <li {%=  criticalAlerts > 0 ? 'class="legend-critical"' : '' %}>
+        {%= "Critical: " + criticalAlerts %}
+    </li>
+    <li {%=  warningAlerts > 0 ? 'class="legend-critical"' : '' %}>
+        {%= "Warning: " + warningAlerts %}
+    </li>
+    <li class="controls-title">Power </li>
+    <li>{%= "Now: " + roundTo(powerCurrent) %}</li>
+    <li>{%= "Max: " + powerMax %}</li>
+    <li class="controls-title">Temperature</li>
+    <li>{%= "Now: " + roundTo(heatCurrent) %}</li>
+    <li>{%= "Max: " + coolingMax %}</li>
+    <li class="controls-title">Weight</li>
+    <li>{%= "Now: " + roundTo(weightCurrent) %}</li>
+    <li>{%= "Max: " + weightMax %}</li>
+    <li class="controls-title">Rack Units</li>
+    <li>{%= "RUs in Use: " + usedUnitsCurrent %}</li>
+    <li>{%= "Max RU Size: " + largestUnitSize %}</li>
+    <li>{%= "Max RU Slot#: " +  largestUnitLocation %}</li>
+</ul>

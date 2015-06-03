@@ -1,0 +1,30 @@
+<div class="all-controls-wrapper">
+    <div class="all-controls-size-wrapper">
+        <div class="controls-container camera-option">
+            <h3 >Views</h3>
+            <ul>
+                {% _.each(viewItems, function(view) { %}
+                <li data-value='{%= view.title %}' class='{%= view.className %}'>{%= view.title %}</li>
+                {% }); %}
+            </ul>
+        </div>
+
+        <div class="controls-container color-option hidden">
+            <h3>Colors</h3>
+            <ul>
+                <li data-value='Color By All Alerts' class='color-item'>Color By All Alerts</li>
+            </ul>
+        </div>
+
+        <div class="controls-checkboxes">
+            {% _.each(checkboxes, function(checkbox) { %}
+            <label>
+                <input type='checkbox' value='{%= checkbox.value %}' id='{%= checkbox.value %}' {%= checkbox.property %} class='checkbox'>
+                {%= checkbox.title%}
+            </label>
+            {% }); %}
+        </div>
+
+    </div>
+</div>
+<i class="fa fa-cogs scene-controls-icon"></i>
